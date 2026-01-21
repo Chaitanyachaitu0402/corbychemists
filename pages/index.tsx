@@ -42,6 +42,9 @@ import FaqItem from "@/components/sections/FaqItem";
 import ContactInfo from "@/components/sections/ContactInfo";
 import ContactForm from "@/components/sections/ContactForm";
 import FloatingSVGGroup from "@/components/ui/FloatingSVGGroup";
+import { FileText, Pill, HeartPulse } from "lucide-react";
+import Heroimg from "../components/assets/hero-img.png";
+import Image from "next/image";
 
 // Dummy data for products and services
 const products = [
@@ -561,140 +564,117 @@ const HomePage: React.FC = () => {
           ]}
         />
 
-        <div className="max-w-xl relative z-10 text-left mx-4 md:mx-8 mt-8">
-          <motion.h1
-            variants={fadeInVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-5xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-8
-                                   drop-shadow-lg font-heading"
-          >
-            Crafting Digital Excellence
-          </motion.h1>
-          <motion.p
-            variants={fadeInVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-xl text-gray-300 mb-12 leading-relaxed"
-          >
-            Your trusted partner for innovative software solutions. We
-            specialize in development, consulting, and AI-powered services.
-          </motion.p>
-          <motion.div
-            variants={fadeInVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap gap-4"
-          >
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-500 to-purple-500 border-none text-white
-                        hover:from-blue-600 hover:to-purple-600 transition-all duration-300
-                        shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.7)] 
-                        text-xl px-10 py-6 rounded-full font-semibold"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const targetElement = document.getElementById("contact");
-                  if (targetElement) {
-                    const yOffset = -80;
-                    const y =
-                      targetElement.getBoundingClientRect().top +
-                      window.pageYOffset +
-                      yOffset;
-                    window.scrollTo({ top: y, behavior: "auto" });
-                  }
-                }}
-              >
-                <span className="flex items-center gap-2">
-                  Contact Us
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    →
-                  </motion.span>
-                </span>
-              </Button>
-            </motion.a>
-          </motion.div>
-        </div>
+        <div className="max-w-xl relative z-10 text-left mx-4 md:mx-8 mt-10">
 
-        {/* Hero section globe - Only render on desktop screens, not on mobile */}
-        <div className="hidden md:block w-1/2 relative mx-4">
-          <motion.div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {/* This entire globe component will only render on md screens and above */}
-            {/* The hidden md:block class on the parent div ensures it's never in the DOM on mobile */}
-            <motion.div
-              className="relative w-[450px] h-[450px]"
-              animate={{
-                y: [0, -15, 0, 15, 0],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-3xl"></div>
+  {/* Badge */}
+  <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full
+                  bg-white/10 backdrop-blur border border-white/20
+                  text-sm text-gray-200">
+    ⭐ Personal Service, Affordable Care
+  </div>
 
-              {/* Simplified globe with fewer elements */}
-              <div className="absolute inset-0 border-2 border-blue-400/40 rounded-full" />
-              <div className="absolute inset-[20%] border border-blue-400/20 rounded-full" />
+  {/* Heading */}
+  <h1 className="text-5xl sm:text-6xl font-heading font-semibold leading-tight mb-6">
+    <span className="text-gray-100">Your Neighborhood</span><br />
+    <span className="bg-gradient-to-r from-blue-400 to-purple-400
+                     text-transparent bg-clip-text">
+      Pharmacy
+    </span>
+  </h1>
 
-              {/* Reduced number of tech points */}
-              <motion.div
-                className="absolute top-[10%] left-[20%] w-4 h-4 bg-blue-400 rounded-full"
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute bottom-[15%] right-[30%] w-5 h-5 bg-purple-400 rounded-full"
-                animate={{ scale: [1, 1.8, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
-              />
+  {/* Description */}
+  <p className="text-lg text-gray-300 mb-10 leading-relaxed">
+    Licensed pharmacists providing fast refills, genuine medicines,
+    and trusted advice — caring for your family and community every day.
+  </p>
 
-              {/* Reduced number of connection lines */}
-              <motion.div
-                className="absolute top-[45%] left-[45%] w-[100%] h-[1.5px] bg-blue-400/40 origin-left"
-                style={{ rotate: -30 }}
-                animate={{ opacity: [0.2, 0.6, 0.2] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute top-[45%] left-[45%] w-[90%] h-[1.5px] bg-purple-400/40 origin-left"
-                style={{ rotate: 45 }}
-                animate={{ opacity: [0.2, 0.5, 0.2] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-              />
+  {/* Feature pills */}
+  <div className="flex flex-wrap gap-4 mb-10">
+    {["Free Delivery", "Most Insurances Accepted", "Fast Service"].map(item => (
+      <div
+        key={item}
+        className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur
+                   border border-white/20 text-gray-200 text-sm"
+      >
+        {item}
+      </div>
+    ))}
+  </div>
 
-              {/* Reduced number of tech icons */}
-              <motion.div
-                className="absolute top-0 left-[45%] p-3 bg-gray-900/80 rounded-full border border-blue-400/30"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
-                <Code2 className="w-8 h-8 text-blue-400" />
-              </motion.div>
-              <motion.div
-                className="absolute bottom-5 right-[25%] p-3 bg-gray-900/80 rounded-full border border-purple-400/30"
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-              >
-                <Cpu className="w-8 h-8 text-purple-400" />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
+  {/* CTAs */}
+  <div className="flex flex-wrap gap-4">
+    <a href="#services">
+  <button
+    className="px-8 py-4 rounded-xl text-white font-semibold text-lg
+               bg-gradient-to-r from-blue-500 to-purple-600
+               hover:from-blue-600 hover:to-purple-700
+               transition shadow-lg"
+  >
+    Explore Services →
+  </button>
+</a>
+
+<a href="#about">
+  <button
+    className="px-8 py-4 rounded-xl text-gray-200 font-semibold text-lg
+               border border-white/30 hover:bg-white/10 transition"
+  >
+    About Us
+  </button>
+</a>
+
+  </div>
+</div>
+
+
+{/* Hero section – Prescription to Relief Story (Desktop only) */}
+<div className="hidden md:block w-1/2 relative mx-6">
+
+  <div
+    className="absolute top-1/2 left-1/2"
+    style={{ transform: "translate(-50%, -50%)" }}
+  >
+    <div className="relative w-[560px] h-[420px] rounded-[28px] overflow-hidden">
+
+      {/* Image */}
+      <Image
+  src={Heroimg}
+  alt="Pharmacist assisting customer"
+  fill
+  priority
+  className="object-cover scale-105"
+/>
+
+
+      {/* Dark gradient overlay (matches theme) */}
+      <div className="absolute inset-0 bg-gradient-to-tr
+                      from-black/60 via-purple-900/40 to-transparent" />
+
+      {/* Glass border */}
+      <div className="absolute inset-0 rounded-[28px]
+                      border border-white/20" />
+
+      {/* Experience badge */}
+      <div className="absolute top-4 right-4
+                      bg-white/10 backdrop-blur
+                      border border-white/30
+                      px-4 py-2 rounded-xl text-sm text-white font-semibold">
+        15+ Years Serving<br />the Community
+      </div>
+
+      {/* Bottom quote */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2
+                      bg-white/10 backdrop-blur
+                      border border-white/20
+                      px-5 py-2 rounded-full text-sm text-gray-200">
+        “Your Health. Our Priority.”
+      </div>
+
+      {/* Glow effect */}
+      <div className="absolute -inset-6 bg-purple-600/20 blur-3xl -z-10" />
+    </div>
+  </div>
+</div>
 
         {/* Mobile Hero Section */}
         <div className="block md:hidden w-full mt-8">

@@ -177,7 +177,7 @@ const Navbar: React.FC = () => {
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Why Choose Us", href: "#products" },
-    { label: "Team", href: "#team" },
+    { label: "Careers", href: "#team" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
@@ -189,7 +189,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
 
     // Initial check

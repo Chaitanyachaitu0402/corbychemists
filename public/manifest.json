@@ -1,7 +1,7 @@
 {
-  "name": "Koshi Labs Pvt. Ltd.",
-  "short_name": "KoshiLabs",
-  "description": "Premier software development company in Birtamode, Jhapa, Nepal",
+  "name": "Corby Chemists.",
+  "short_name": "Corby Chemists",
+  "description": "Licensed pharmacists providing fast refills, genuine medicines, and trusted advice caring for your family and community every day.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#121212",
@@ -22,7 +22,7 @@
     {
       "name": "Contact Us",
       "url": "/#contact",
-      "description": "Get in touch with Koshi Labs"
+      "description": "Get in touch with Corby Chemists"
     },
     {
       "name": "Services",
@@ -32,5 +32,5 @@
   ],
   "lang": "en",
   "orientation": "portrait-primary",
-  "categories": ["business", "technology", "software development"]
+  "categories": ["pharmacists", "pharmacy", "medicines", "healthcare", "community care"]
 } 

@@ -551,37 +551,37 @@ const HomePage: React.FC = () => {
   return (
     <div className="bg-gradient-to-br from-gray-900 via-purple-900 to-black min-h-screen">
       <Head>
-        <title>Koshi Labs - Crafting Digital Excellence</title>
+        <title>Corby Chemists - Delivering Trusted Pharmacy Care</title>
         <meta
           name="description"
-          content="Koshi Labs Pvt. Ltd. is a leading software development company in Birtamode, Jhapa, Nepal specializing in custom software development, AI solutions, web applications, mobile apps, and digital transformation services."
+          content="Delivering trusted pharmacy care, quality medications, and personalized health services to our community."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="keywords"
-          content="KoshiLabs, Koshi Labs, software development, Birtamode, Jhapa, Nepal, web development, mobile app development, database, performance optimization, AI solutions, custom software, digital transformation, IT services, consulting, Nepali tech company, software company Nepal"
+          content="Corby Chemists, Delivering trusted pharmacy care, quality medications, and personalized health services to our community."
         />
         <meta
           property="og:title"
-          content="Koshi Labs Pvt. Ltd. - Premier Software Development Company in Nepal"
+          content="Corby Chemists - Delivering trusted pharmacy care, quality medications, and personalized health services to our community."
         />
         <meta
           property="og:description"
-          content="Leading software development company in Birtamode, Jhapa, Nepal offering innovative solutions in web development, mobile apps, and AI services."
+          content="Delivering trusted pharmacy care, quality medications, and personalized health services to our community."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://koshilabs.com" />
+        <meta property="og:url" content="https://CorbyChemists.com" />
         <meta
           property="og:image"
-          content="https://koshilabs.com/og-image.jpg"
+          content="https://CorbyChemists.com/og-image.jpg"
         />
-        <meta property="og:site_name" content="KoshiLabs" />
+        <meta property="og:site_name" content="CorbyChemists" />
         <meta property="og:locale" content="en_US" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="KoshiLabs - Crafting Digital Excellence"
+          content="CorbyChemists - Crafting Digital Excellence"
         />
         <meta
           name="twitter:description"
@@ -589,7 +589,7 @@ const HomePage: React.FC = () => {
         />
         <meta
           name="twitter:image"
-          content="https://koshilabs.com/og-image.jpg"
+          content="https://CorbyChemists.com/og-image.jpg"
         />
 
         <meta name="geo.region" content="NP-P1" />
@@ -597,7 +597,7 @@ const HomePage: React.FC = () => {
         <meta name="geo.position" content="26.6418;87.9927" />
         <meta name="ICBM" content="26.6418, 87.9927" />
 
-        <link rel="canonical" href="https://koshilabs.com" />
+        <link rel="canonical" href="https://CorbyChemists.com" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -1769,7 +1769,7 @@ const HomePage: React.FC = () => {
             {
               icon: <Mail className="w-5 h-5 text-pink-400" />,
               label: "Email",
-              value: "corbychemists@gmail.com",
+              value: "Corbychemists@gmail.com",
             },
             {
               icon: <MapPin className="w-5 h-5 text-green-400" />,
@@ -1915,7 +1915,7 @@ const HomePage: React.FC = () => {
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-            {/* KoshiLabs Text */}
+            {/* CorbyChemists Text */}
             <div className="text-center md:text-left">
               <motion.div
                 className="flex items-center justify-center md:justify-start mb-4"
@@ -1956,29 +1956,29 @@ const HomePage: React.FC = () => {
                 whileHover={{ opacity: 1 }}
               >
                 <motion.a
-                  href="https://www.facebook.com/koshilabs"
+                  href="https://www.facebook.com/CorbyChemists"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   whileHover={{ y: -3, scale: 1.2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  aria-label="KoshiLabs Facebook page"
+                  aria-label="CorbyChemists Facebook page"
                 >
                   <Facebook className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                  href="https://x.com/koshilabs"
+                  href="https://x.com/CorbyChemists"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   whileHover={{ y: -3, scale: 1.2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  aria-label="KoshiLabs X page"
+                  aria-label="CorbyChemists X page"
                 >
                   <X className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                  href="https://www.linkedin.com/company/koshilabs"
+                  href="https://www.linkedin.com/company/CorbyChemists"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   whileHover={{ y: -3, scale: 1.2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  aria-label="KoshiLabs LinkedIn page"
+                  aria-label="CorbyChemists LinkedIn page"
                 >
                   <Linkedin className="w-5 h-5" />
                 </motion.a>
@@ -2068,10 +2068,10 @@ const HomePage: React.FC = () => {
                   </div>
                   <span>
                     <a
-                      href="mailto:corbychemista@koshilabs.com"
-                      aria-label="Email corbychemists@koshilabs.com"
+                      href="mailto:corbychemista@CorbyChemists.com"
+                      aria-label="Email corbychemists@CorbyChemists.com"
                     >
-                      corbychemists@koshilabs.com
+                      corbychemists@CorbyChemists.com
                     </a>
                   </span>
                 </motion.div>

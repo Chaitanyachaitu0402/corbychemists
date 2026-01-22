@@ -25,15 +25,15 @@ export default function Document() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Koshi Labs Pvt. Ltd.",
-              alternateName: "KoshiLabs",
-              url: "https://koshilabs.com",
-              logo: "https://koshilabs.com/logo.png",
+              name: "Corby Chemists",
+              alternateName: "Corby Chemists",
+              url: "https://Corby Chemists.com",
+              logo: "https://Corby Chemists.com/logo.png",
               description:
                 "Leading software development company in Birtamode, Jhapa, Nepal specializing in custom software development, AI solutions, web applications, and digital transformation services.",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Bhadrapur Road, Birtamode-4",
+                streetAddress: "988 1st Ave, New York, NY 10022, US",
                 addressLocality: "Birtamode",
                 addressRegion: "Jhapa",
                 postalCode: "57204",

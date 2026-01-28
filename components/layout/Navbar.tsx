@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Logo from "@/components/assets/logo.jpeg";
+import Image from "next/image";
 
 
 interface NavItem {
@@ -119,48 +121,70 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 
             <div className="flex justify-center mb-8 mt-2">
               <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-heading tracking-tighter">
-                Corby<span className="font-light">Chemists</span>
-              </span>
+<Image src={Logo}
+                    alt="Corby Chemists Logo"
+                    width={120}
+                    height={120}
+                    className="rounded-full" />              </span>
             </div>
 
             <nav className="space-y-3">
-              {navItems.map((item, index) =>
-                item.children ? (
-                  <MobileSubmenuItem
-                    key={index}
-                    item={item}
-                    onClose={onClose}
-                  />
-                ) : (
-                  <a
-                    key={index}
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const targetId = item.href.substring(1);
-                      const targetElement = document.getElementById(targetId);
-                      if (targetElement) {
-                        const yOffset = -80;
-                        const y =
-                          targetElement.getBoundingClientRect().top +
-                          window.pageYOffset +
-                          yOffset;
-                        window.scrollTo({ top: y, behavior: "auto" });
-                      }
-                      onClose();
-                    }}
-                    className={cn(
-                      "flex items-center w-full justify-center text-gray-200 hover:text-white hover:bg-white/10 py-4 px-4 rounded-xl transition-all text-lg font-medium border border-transparent hover:border-white/10",
-                      activeSection === item.href.substring(1)
-                        ? "bg-white/10 text-white border-white/20"
-                        : ""
-                    )}
-                  >
-                    {item.label}
-                  </a>
-                )
-              )}
-            </nav>
+  {navItems.map((item, index) =>
+    item.children ? (
+      <MobileSubmenuItem
+        key={index}
+        item={item}
+        onClose={onClose}
+      />
+    ) : item.href.startsWith("#") ? (
+      /* =====================
+         In-page scroll link
+      ===================== */
+      <button
+        key={index}
+        onClick={() => {
+          const targetId = item.href.substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            const yOffset = -80;
+            const y =
+              targetElement.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({ top: y, behavior: "auto" });
+          }
+
+          onClose();
+        }}
+        className={cn(
+          "flex items-center w-full justify-center text-gray-200 hover:text-white hover:bg-white/10 py-4 px-4 rounded-xl transition-all text-lg font-medium border border-transparent hover:border-white/10",
+          activeSection === item.href.substring(1)
+            ? "bg-white/10 text-white border-white/20"
+            : ""
+        )}
+      >
+        {item.label}
+      </button>
+    ) : (
+      /* =====================
+         Route navigation
+      ===================== */
+      <Link key={index} href={item.href}>
+        <span
+          onClick={onClose}
+          className={cn(
+            "flex items-center w-full justify-center cursor-pointer text-gray-200 hover:text-white hover:bg-white/10 py-4 px-4 rounded-xl transition-all text-lg font-medium border border-transparent hover:border-white/10"
+          )}
+        >
+          {item.label}
+        </span>
+      </Link>
+    )
+  )}
+</nav>
+
           </motion.div>
         </motion.div>
       )}
@@ -358,8 +382,11 @@ const Navbar: React.FC = () => {
             >
               <div className="flex items-center">
                 <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-heading tracking-tighter">
-                  Corby<span className="font-light">Chemists</span>
-                </span>
+<Image src={Logo}
+                    alt="Corby Chemists Logo"
+                    width={130}
+                    height={130}
+                    className="rounded-full" />                </span>
               </div>
             </a>
 
@@ -395,8 +422,12 @@ const Navbar: React.FC = () => {
                 <div className="relative">
                   <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/10 to-purple-500/10 rounded-full blur-md"></div>
                   <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-heading tracking-tighter hidden sm:inline-block relative z-10">
-                    Corby<span className="font-light">Chemists</span>
-                  </span>
+                  <Image src={Logo}
+                    alt="Corby Chemists Logo"
+                    width={120}
+                    height={120}
+                    className="rounded-full" />
+                      </span>
                 </div>
               </div>
             </a>

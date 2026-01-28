@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 
 interface NavItem {
   label: string;
@@ -177,7 +180,7 @@ const Navbar: React.FC = () => {
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Why Choose Us", href: "#products" },
-    { label: "Careers", href: "#team" },
+  { label: "Careers", href: "/career" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
@@ -300,6 +303,8 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const router = useRouter();
+
   // Enhance scroll behavior
   useEffect(() => {
     // Add event listeners to all anchor links - use instant scrolling
@@ -397,36 +402,58 @@ const Navbar: React.FC = () => {
             </a>
 
             <div className="flex items-center">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault(); // Prevent default anchor behavior
-                    scrollToSection(item.href);
-                  }}
-                  className={cn(
-                    "relative px-3 py-1.5 transition-all duration-200 text-sm md:text-base font-medium rounded-full",
-                    activeSection === item.href.substring(1)
-                      ? "text-white bg-white/10"
-                      : "text-gray-200 hover:text-white hover:bg-white/5"
-                  )}
-                >
-                  {item.label}
-                  {activeSection === item.href.substring(1) && (
-                    <motion.div
-                      layoutId="navbar-indicator"
-                      className="absolute bottom-0 left-0 right-0 mx-auto w-1 h-1 bg-blue-400 rounded-full"
-                      transition={{
-                        type: "spring",
-                        bounce: 0.2,
-                        duration: 0.8,
-                      }}
-                    />
-                  )}
-                </a>
-              ))}
-            </div>
+  {navItems.map((item, index) => {
+    const isHashLink = item.href.startsWith("#");
+    const sectionId = isHashLink ? item.href.substring(1) : "";
+
+    return isHashLink ? (
+      /* =====================
+         In-page scroll link
+      ===================== */
+      <button
+        key={index}
+        onClick={() => scrollToSection(item.href)}
+        className={cn(
+          "relative px-3 py-1.5 transition-all duration-200 text-sm md:text-base font-medium rounded-full",
+          activeSection === sectionId
+            ? "text-white bg-white/10"
+            : "text-gray-200 hover:text-white hover:bg-white/5"
+        )}
+      >
+        {item.label}
+
+        {activeSection === sectionId && (
+          <motion.div
+            layoutId="navbar-indicator"
+            className="absolute bottom-0 left-0 right-0 mx-auto w-1 h-1 bg-blue-400 rounded-full"
+            transition={{
+              type: "spring",
+              bounce: 0.2,
+              duration: 0.8,
+            }}
+          />
+        )}
+      </button>
+    ) : (
+      /* =====================
+         Route navigation
+      ===================== */
+      <Link key={index} href={item.href}>
+        <span
+          className={cn(
+            "relative px-3 py-1.5 transition-all duration-200 text-sm md:text-base font-medium rounded-full cursor-pointer",
+            router.pathname === item.href
+              ? "text-white bg-white/10"
+              : "text-gray-200 hover:text-white hover:bg-white/5"
+          )}
+        >
+          {item.label}
+        </span>
+      </Link>
+    );
+  })}
+</div>
+
           </div>
         </motion.nav>
       )}

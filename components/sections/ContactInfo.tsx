@@ -40,11 +40,11 @@ const ContactInfo = () => {
         <div>
           <p className="font-medium text-white mb-1">Phone</p>
           <a 
-            href="tel:+977 9817996672" 
-            aria-label="Call +977 9817996672"
+            href="tel:+12127556632" 
+            aria-label="Call +12127556632"
             className="group-hover:text-purple-400 transition-colors"
           >
-            +977 9817996672
+            +12127556632
           </a>
         </div>
       </motion.div>
@@ -64,7 +64,7 @@ const ContactInfo = () => {
             aria-label="Email admin@koshilabs.com"
             className="group-hover:text-green-400 transition-colors"
           >
-            admin@koshilabs.com
+            Corbychemists@koshilabs.com
           </a>
         </div>
       </motion.div>
@@ -79,7 +79,7 @@ const ContactInfo = () => {
         </div>
         <div>
           <p className="font-medium text-white mb-1">Website</p>
-          <p className="group-hover:text-yellow-400 transition-colors">www.koshilabs.com</p>
+          <p className="group-hover:text-yellow-400 transition-colors">www.corbychemisits.com</p>
         </div>
       </motion.div>
     </motion.div>

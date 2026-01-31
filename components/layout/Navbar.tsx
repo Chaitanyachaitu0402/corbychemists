@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Logo from "@/components/assets/logo.jpeg";
+import Logo from "@/components/assets/logo.png";
 import Image from "next/image";
 
 
@@ -384,8 +384,8 @@ const Navbar: React.FC = () => {
                 <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-heading tracking-tighter">
 <Image src={Logo}
                     alt="Corby Chemists Logo"
-                    width={130}
-                    height={130}
+                    width={85}
+                    height={85}
                     className="rounded-full" />                </span>
               </div>
             </a>
@@ -424,8 +424,8 @@ const Navbar: React.FC = () => {
                   <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-heading tracking-tighter hidden sm:inline-block relative z-10">
                   <Image src={Logo}
                     alt="Corby Chemists Logo"
-                    width={120}
-                    height={120}
+                    width={85}
+                    height={85}
                     className="rounded-full" />
                       </span>
                 </div>

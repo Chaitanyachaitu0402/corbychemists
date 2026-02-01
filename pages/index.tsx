@@ -1965,7 +1965,7 @@ const HomePage: React.FC = () => {
                   <Facebook className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                  href="https://x.com/CorbyChemists"
+                  href="https://x.com/chemists67652"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   whileHover={{ y: -3, scale: 1.2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -1973,7 +1973,7 @@ const HomePage: React.FC = () => {
                 >
                   <X className="w-5 h-5" />
                 </motion.a>
-                <motion.a
+                {/* <motion.a
                   href="https://www.linkedin.com/company/CorbyChemists"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   whileHover={{ y: -3, scale: 1.2 }}
@@ -1981,7 +1981,7 @@ const HomePage: React.FC = () => {
                   aria-label="CorbyChemists LinkedIn page"
                 >
                   <Linkedin className="w-5 h-5" />
-                </motion.a>
+                </motion.a> */}
               </motion.div>
 
               <motion.div
